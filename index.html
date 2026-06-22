@@ -31,7 +31,7 @@ a{color:#2563eb}
 
 <div class="container">
 <div class="card">
-<button onclick=dark()>🌙 Dark Mode</button>
+<button id="dbutton", onclick=dark()>🌙 Dark Mode</button>
 <h3>Tiến độ chuyến đi</h3>
 <div class="progress"><div id="bar" class="bar">0%</div></div>
 <p><b>Điểm tiếp theo:</b> <span id="next">-</span></p>
@@ -119,6 +119,7 @@ cbs.forEach((c, i) => {
 // Khôi phục Dark Mode đã lưu
 if (localStorage.getItem('dark_mode') === 'true') {
   document.body.classList.add('dark');
+  document.getElementById("dbutton").innerText = "☀️ Light Mode";
 }
 
 function update() {
@@ -161,6 +162,12 @@ function dark() {
     'dark_mode',
     document.body.classList.contains('dark')
   );
+  if (document.body.classList.contains('dark')) {
+    document.getElementById("dbutton").innerText = "🌙 Dark Mode";
+  }
+  else {
+    document.getElementById("dbutton").innerText = "☀️ Light Mode";
+  }
 }
 
 // Khởi tạo lần đầu
