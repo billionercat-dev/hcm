@@ -152,6 +152,13 @@ function update() {
   }
 
   document.getElementById('next').innerText = next;
+  
+  if (document.body.classList.contains('dark')) {
+    document.getElementById("dbutton").innerText = "☀️ Light Mode";
+  }
+  else {
+    document.getElementById("dbutton").innerText = "🌙 Dark Mode";
+  }
 }
 
 // Bật / tắt Dark Mode và lưu lại
@@ -163,10 +170,10 @@ function dark() {
     document.body.classList.contains('dark')
   );
   if (document.body.classList.contains('dark')) {
-    document.getElementById("dbutton").innerText = "🌙 Dark Mode";
+    document.getElementById("dbutton").innerText = "☀️ Light Mode";
   }
   else {
-    document.getElementById("dbutton").innerText = "☀️ Light Mode";
+    document.getElementById("dbutton").innerText = "🌙 Dark Mode";
   }
 }
 
