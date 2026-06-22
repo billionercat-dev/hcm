@@ -31,7 +31,7 @@ a{color:#2563eb}
 
 <div class="container">
 <div class="card">
-<button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button>
+<button onclick=dark()>🌙 Dark Mode</button>
 <h3>Tiến độ chuyến đi</h3>
 <div class="progress"><div id="bar" class="bar">0%</div></div>
 <p><b>Điểm tiếp theo:</b> <span id="next">-</span></p>
@@ -106,27 +106,64 @@ a{color:#2563eb}
 </div>
 
 <script>
-const cbs=[...document.querySelectorAll('input[type=checkbox]')];
-function update(){
- let done=cbs.filter(x=>x.checked).length;
- let pct=Math.round(done*100/cbs.length);
- document.getElementById('bar').style.width=pct+'%';
- document.getElementById('bar').innerText=pct+'%';
- localStorage.setItem('travel_pro',JSON.stringify(cbs.map(x=>x.checked)));
- document.querySelectorAll('tr').forEach(r=>r.classList.remove('next'));
- let next='Hoàn thành chuyến đi 🎉';
- for(let i=0;i<cbs.length;i++){
-   if(!cbs[i].checked){
-     let row=cbs[i].closest('tr');
-     row.classList.add('next');
-     next=row.cells[2]?.innerText || '';
-     break;
-   }
- }
- document.getElementById('next').innerText=next;
+const cbs = [...document.querySelectorAll('input[type=checkbox]')];
+
+// Khôi phục trạng thái checkbox đã lưu
+const saved = JSON.parse(localStorage.getItem('travel_pro') || '[]');
+
+cbs.forEach((c, i) => {
+  if (saved[i]) c.checked = true;
+  c.onchange = update;
+});
+
+// Khôi phục Dark Mode đã lưu
+if (localStorage.getItem('dark_mode') === 'true') {
+  document.body.classList.add('dark');
 }
-const saved=JSON.parse(localStorage.getItem('travel_pro')||'[]');
-cbs.forEach((c,i)=>{if(saved[i]) c.checked=true;c.onchange=update;});
+
+function update() {
+  let done = cbs.filter(x => x.checked).length;
+  let pct = Math.round(done * 100 / cbs.length);
+
+  // Cập nhật thanh tiến độ
+  document.getElementById('bar').style.width = pct + '%';
+  document.getElementById('bar').innerText = pct + '%';
+
+  // Lưu trạng thái checkbox
+  localStorage.setItem(
+    'travel_pro',
+    JSON.stringify(cbs.map(x => x.checked))
+  );
+
+  // Xóa đánh dấu bước tiếp theo cũ
+  document.querySelectorAll('tr').forEach(r => r.classList.remove('next'));
+
+  // Tìm bước tiếp theo
+  let next = 'Hoàn thành chuyến đi 🎉';
+
+  for (let i = 0; i < cbs.length; i++) {
+    if (!cbs[i].checked) {
+      let row = cbs[i].closest('tr');
+      row.classList.add('next');
+      next = row.cells[2]?.innerText || '';
+      break;
+    }
+  }
+
+  document.getElementById('next').innerText = next;
+}
+
+// Bật / tắt Dark Mode và lưu lại
+function dark() {
+  document.body.classList.toggle('dark');
+
+  localStorage.setItem(
+    'dark_mode',
+    document.body.classList.contains('dark')
+  );
+}
+
+// Khởi tạo lần đầu
 update();
 </script>
 </body>
