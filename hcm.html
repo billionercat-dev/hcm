@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel Pro - Sài Gòn, Củ Chi & Vũng Tàu</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--text:#222;--primary:#2563eb;--muted:#666}
+.dark{--bg:#111827;--card:#1f2937;--text:#f3f4f6;--muted:#d1d5db}
+body{font-family:system-ui,Arial;margin:0;background:var(--bg);color:var(--text)}
+header{padding:18px;background:var(--primary);color:#fff;position:sticky;top:0}
+.container{max-width:1200px;margin:auto;padding:16px}
+.card{background:var(--card);padding:16px;border-radius:14px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.progress{height:24px;background:#ddd;border-radius:20px;overflow:hidden}
+.bar{height:100%;background:#22c55e;width:0%;color:#fff;text-align:center;line-height:24px}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #d1d5db;padding:8px;vertical-align:top}
+th{background:#eef2ff}
+.dark th{background:#374151}
+button{padding:8px 12px;border:none;border-radius:8px;background:var(--primary);color:#fff;cursor:pointer}
+.next{outline:3px solid orange}
+.small{color:var(--muted);font-size:13px}
+a{color:#2563eb}
+</style>
+</head>
+<body>
+<header>
+<h2>✈️ HN → TP.HCM → Củ Chi → Vũng Tàu (4N3Đ)</h2>
+<div>Gia đình 4 người | Căn hộ dịch vụ Quận 4 (Xuyên suốt chuyến đi)</div>
+</header>
+
+<div class="container">
+<div class="card">
+<button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button>
+<h3>Tiến độ chuyến đi</h3>
+<div class="progress"><div id="bar" class="bar">0%</div></div>
+<p><b>Điểm tiếp theo:</b> <span id="next">-</span></p>
+<p><b>Ngân sách tham khảo:</b> 20–30 triệu đồng / cả gia đình (không gồm vé máy bay)</p>
+</div>
+
+<div class="card">
+<h3>🏨 Lưu trú & Di chuyển quan trọng</h3>
+<ul>
+<li><b>Lưu trú:</b> Thuê trọn gói căn hộ 2-3 phòng ngủ tại Quận 4 (Bến Vân Đồn) trong 3 đêm.</li>
+<li><b>Di chuyển ngày 2 & ngày 3:</b> Nên thuê trọn gói xe ô tô 4-7 chỗ có tài xế phục vụ riêng cho cả nhà.</li>
+<li><b>Lưu ý vé:</b> Nên đặt trước vé tàu Waterbus và xe bus 2 tầng online để tránh hết chỗ.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Ngày 1 - Chào Sài Gòn & Hoàng hôn trên sông</h3>
+<table>
+<tr><th>✓</th><th>Giờ</th><th>Hoạt động</th><th>Di chuyển</th><th>Chi phí</th><th>Maps</th></tr>
+<tr><td><input type="checkbox"></td><td>07:00-09:15</td><td>Bay Hà Nội (HAN) → TP.HCM (SGN)</td><td>Máy bay</td><td>-</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>09:30-14:00</td><td>Di chuyển về Quận 4, gửi đồ, ăn trưa nghỉ ngơi</td><td>Grab Ô tô</td><td>300-400k</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>14:00-16:00</td><td>Check-in căn hộ, cả nhà ngủ trưa lấy sức</td><td>-</td><td>-</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>16:30-18:00</td><td>Waterbus Bạch Đằng (Ngắm hoàng hôn sông Sài Gòn)</td><td>Grab 10 phút</td><td>15k/người</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+<tr><td><input type="checkbox"></td><td>18:30-20:00</td><td>Ăn tối món ăn Nam Bộ (Bánh xèo, gỏi cuốn)</td><td>Đi bộ/Grab</td><td>600-900k</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>20:00-21:30</td><td>Dạo bộ thong thả tại Phố đi bộ Nguyễn Huệ</td><td>Đi bộ nhẹ</td><td>Miễn phí</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>Ngày 2 - Địa đạo Củ Chi & Xe Bus 2 Tầng</h3>
+<table>
+<tr><th>✓</th><th>Giờ</th><th>Hoạt động</th><th>Di chuyển</th><th>Chi phí</th><th>Maps</th></tr>
+<tr><td><input type="checkbox"></td><td>07:30-09:00</td><td>Xuất phát đi di tích lịch sử Địa đạo Củ Chi</td><td>Xe thuê riêng</td><td>Thuê trọn gói</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>09:00-11:30</td><td>Khám phá Địa đạo Bến Đình (chui hầm, ăn khoai mì, bắn súng)</td><td>Đi bộ tham quan</td><td>35k/người lớn</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+<tr><td><input type="checkbox"></td><td>11:30-13:00</td><td>Ăn trưa đặc sản Bò Tơ Củ Chi bánh tráng rau rừng</td><td>Xe ô tô</td><td>600-1000k</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>13:00-14:30</td><td>Di chuyển quay trở lại căn hộ tại Sài Gòn</td><td>Xe ô tô</td><td>-</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>14:30-16:30</td><td>Cả nhà ngủ trưa, nghỉ ngơi phục hồi sức khỏe</td><td>-</td><td>-</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>17:00-18:15</td><td>Trải nghiệm Xe bus 2 tầng mui trần ngắm Quận 1 lên đèn</td><td>Xe bus 2 tầng</td><td>~150k/người</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+<tr><td><input type="checkbox"></td><td>18:30-20:00</td><td>Thưởng thức đặc sản Hủ tiếu Nam Vang khô đúng điệu</td><td>Đi bộ</td><td>250-350k</td><td></td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>Ngày 3 - Phá đảo biển Vũng Tàu (Đi về trong ngày)</h3>
+<table>
+<tr><th>✓</th><th>Giờ</th><th>Hoạt động</th><th>Di chuyển</th><th>Chi phí</th><th>Maps</th></tr>
+<tr><td><input type="checkbox"></td><td>06:00-08:30</td><td>Xuất phát sớm đi biển Vũng Tàu (né giờ kẹt xe)</td><td>Xe thuê riêng</td><td>Thuê trọn gói</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>08:30-09:30</td><td>Ăn sáng món bánh khọt Vũng Tàu giòn rụm nóng hổi</td><td>Xe ô tô</td><td>200-300k</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+<tr><td><input type="checkbox"></td><td>09:30-11:30</td><td>Check-in Bạch Dinh cổ kính view biển hoặc Tượng Chúa Kito</td><td>Đi bộ vãn cảnh</td><td>40k/người lớn</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+<tr><td><input type="checkbox"></td><td>11:30-13:30</td><td>Đại tiệc hải sản tươi sống ven eo biển (Gành Hào/Lâm Đường)</td><td>Xe ô tô</td><td>1,5-2,5 triệu</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+<tr><td><input type="checkbox"></td><td>13:30-15:30</td><td>Nghỉ ngơi tại quán cafe máy lạnh lớn sát biển tránh nắng gắt</td><td>-</td><td>200-300k</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>15:30-17:30</td><td>Cả nhà tắm biển, dạo mát tại khu vực Bãi Sau</td><td>Đi bộ tắm biển</td><td>Miễn phí</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+<tr><td><input type="checkbox"></td><td>17:45-20:15</td><td>Lên xe di chuyển dọc cao tốc trở về căn hộ Sài Gòn</td><td>Xe ô tô</td><td>-</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>20:30-21:30</td><td>Ăn tối nhẹ nhàng tại Sài Gòn (Súp cua, bánh tráng trộn...)</td><td>Tự do</td><td>200k</td><td></td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>Ngày 4 - Trải nghiệm Tàu Điện Ngầm Metro & Đô thị hiện đại</h3>
+<table>
+<tr><th>✓</th><th>Giờ</th><th>Hoạt động</th><th>Di chuyển</th><th>Chi phí</th><th>Maps</th></tr>
+<tr><td><input type="checkbox"></td><td>08:30-09:00</td><td>Di chuyển đến Ga ngầm Bến Thành để trải nghiệm tàu điện</td><td>Grab Ô tô</td><td>50-80k</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+<tr><td><input type="checkbox"></td><td>09:00-09:20</td><td>Trải nghiệm Tàu điện ngầm Metro số 1: Ga Bến Thành → Ga Tân Cảng</td><td>Tàu Metro</td><td>~15k/người</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>09:30-11:30</td><td>Dạo công viên ven sông Vinhomes Central Park cực rộng và mát</td><td>Đi bộ</td><td>Miễn phí</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+<tr><td><input type="checkbox"></td><td>11:30-13:00</td><td>Ăn trưa, uống cà phê điều hòa mát rượi bên trong TTTM Landmark 81</td><td>Đi bộ</td><td>600-1200k</td><td><a href="https://google.com" target="_blank">Maps</a></td></tr>
+<tr><td><input type="checkbox"></td><td>13:15-13:45</td><td>Quay lại căn hộ Quận 4 lấy hành lý và check-out</td><td>Grab Ô tô</td><td>80-120k</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>13:45-14:15</td><td>Di chuyển ra sân bay Tân Sơn Nhất đón chuyến bay</td><td>Grab Ô tô</td><td>200-300k</td><td></td></tr>
+<tr><td><input type="checkbox"></td><td>15:30</td><td>Bay TP.HCM (SGN) → Hà Nội (HAN)</td><td>Máy bay</td><td>-</td><td></td></tr>
+</table>
+</div>
+
+</div>
+
+<script>
+const cbs=[...document.querySelectorAll('input[type=checkbox]')];
+function update(){
+ let done=cbs.filter(x=>x.checked).length;
+ let pct=Math.round(done*100/cbs.length);
+ document.getElementById('bar').style.width=pct+'%';
+ document.getElementById('bar').innerText=pct+'%';
+ localStorage.setItem('travel_pro',JSON.stringify(cbs.map(x=>x.checked)));
+ document.querySelectorAll('tr').forEach(r=>r.classList.remove('next'));
+ let next='Hoàn thành chuyến đi 🎉';
+ for(let i=0;i<cbs.length;i++){
+   if(!cbs[i].checked){
+     let row=cbs[i].closest('tr');
+     row.classList.add('next');
+     next=row.cells[2]?.innerText || '';
+     break;
+   }
+ }
+ document.getElementById('next').innerText=next;
+}
+const saved=JSON.parse(localStorage.getItem('travel_pro')||'[]');
+cbs.forEach((c,i)=>{if(saved[i]) c.checked=true;c.onchange=update;});
+update();
+</script>
+</body>
+</html>
